@@ -140,6 +140,7 @@ export default function OrderDashboard() {
                     <Divider sx={{ mt: 1 }} />
                   </Box>
                 ))}
+              </List>
             </>
           ) : (
             <Typography color="text.secondary" textAlign="center" sx={{ mt: 4 }}>

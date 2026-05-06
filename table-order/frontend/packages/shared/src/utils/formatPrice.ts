@@ -13,5 +13,6 @@ export function formatPrice(amount: number): string {
 export function parsePrice(formatted: string): number {
   const cleaned = formatted.replace(/[₩,\s]/g, '');
   const parsed = parseInt(cleaned, 10);
-  return isNaN(parsed) ? 0 : parsed;
+  if (isNaN(parsed) || parsed < 0) return 0;
+  return parsed;
 }
