@@ -201,3 +201,104 @@
 
 ---
 
+## CONSTRUCTION - Functional Design: Auth+Store (Answers & Generation)
+**Timestamp**: 2026-05-06T00:19:00Z
+**User Input**: "응 나는 개발자 A 롤이 맞아.auth-store-functional-design-plan.md파일 업데이트했어. 확인해줘"
+**AI Response**: Read answers (Q1:A Access Token 16h, Q2:A 5 failures/15min lock, Q3:A Session starts on tablet login, Q4:A Menu screen maintained, Q5:A API-based store registration). No contradictions. Generated 3 functional design artifacts: domain-entities.md, business-rules.md, business-logic-model.md. Includes PBT-01 testable properties identification.
+**Context**: Functional Design for Auth+Store complete. Developer A role confirmed. Presenting for approval.
+
+---
+
+## CONSTRUCTION - Functional Design: Auth+Store (Approval)
+**Timestamp**: 2026-05-06T00:20:00Z
+**User Input**: "승인"
+**AI Response**: Functional Design for Auth+Store approved. Proceeding to NFR Requirements.
+**Context**: Functional Design complete for Developer A units. Moving to NFR Requirements stage.
+
+---
+
+## CONSTRUCTION - NFR Requirements: Auth+Store (Answers & Generation)
+**Timestamp**: 2026-05-06T00:21:00Z
+**User Input**: "작성완료했어."
+**AI Response**: Read answers (Q1:B 1s/100ms targets, Q2:A passlib bcrypt, Q3:C dbmate, Q4:A FastAPI auto Swagger, Q5:C Python standard logging). No contradictions. Generated nfr-requirements.md (performance, security OWASP mapping, availability, maintainability) and tech-stack-decisions.md (full dependency list with pinned versions, PBT-09 Hypothesis confirmed).
+**Context**: NFR Requirements for Auth+Store complete. Presenting for approval.
+
+---
+
+## CONSTRUCTION - NFR Requirements: Auth+Store (Approval)
+**Timestamp**: 2026-05-06T00:22:00Z
+**User Input**: "승인"
+**AI Response**: NFR Requirements for Auth+Store approved. Proceeding to NFR Design.
+**Context**: NFR Requirements complete. Moving to NFR Design stage.
+
+---
+
+## CONSTRUCTION - NFR Design: Auth+Store (Answers & Generation)
+**Timestamp**: 2026-05-06T00:23:00Z
+**User Input**: "작성완료"
+**AI Response**: Read answers (Q1:A Simple retry 3x/1s, Q2:C Auto-scaling pool, Q3:A Middleware UUID X-Request-ID). No contradictions. Generated nfr-design-patterns.md (security patterns, resilience patterns, observability patterns) and logical-components.md (middleware stack, DI pattern, project structure, settings management).
+**Context**: NFR Design for Auth+Store complete. Presenting for approval.
+
+---
+
+## CONSTRUCTION - NFR Design: Auth+Store (Approval)
+**Timestamp**: 2026-05-06T00:24:00Z
+**User Input**: "승인"
+**AI Response**: NFR Design for Auth+Store approved. Proceeding to Infrastructure Design.
+**Context**: NFR Design complete. Moving to Infrastructure Design stage.
+
+---
+
+## CONSTRUCTION - Infrastructure Design: Auth+Store (Answers & Generation)
+**Timestamp**: 2026-05-06T00:25:00Z
+**User Input**: "작성했어"
+**AI Response**: Read answers (Q1:A EC2+Docker Compose, Q2:A db.t3.micro single, Q3:B Custom VPC Public/Private). No contradictions. Generated infrastructure-design.md (compute, data, network, security mapping) and deployment-architecture.md (deployment diagram, process, env config, monitoring, cost estimate ~$77/month).
+**Context**: Infrastructure Design for Auth+Store complete. Presenting for approval.
+
+---
+
+## CONSTRUCTION - Infrastructure Design: Auth+Store (Approval)
+**Timestamp**: 2026-05-06T00:26:00Z
+**User Input**: "승인"
+**AI Response**: Infrastructure Design for Auth+Store approved. Proceeding to Code Generation.
+**Context**: Infrastructure Design complete. Moving to Code Generation stage (Part 1: Planning).
+
+---
+
+## CONSTRUCTION - Code Generation: Auth+Store (Plan Created)
+**Timestamp**: 2026-05-06T00:27:00Z
+**AI Response**: Created auth-store-code-generation-plan.md with 20 steps: Auth Service (Steps 1-9: project structure, core modules, DB layer, models, business logic, API routes, middleware, migrations, tests) + Store Service (Steps 10-19: same structure) + Docker Compose (Step 20). Story mapping included.
+**Context**: Code Generation Part 1 - Planning complete. Presenting plan for approval before code generation.
+
+---
+
+## CONSTRUCTION - Code Generation: Auth+Store (Plan Approval)
+**Timestamp**: 2026-05-06T00:28:00Z
+**User Input**: "승인"
+**AI Response**: Code generation plan approved. Starting Part 2 - Generation. Executing Step 1.
+**Context**: Code Generation Part 1 complete. Beginning code generation.
+
+---
+
+## CONSTRUCTION - Code Generation: Auth+Store (Generation Complete)
+**Timestamp**: 2026-05-06T00:29:00Z
+**AI Response**: All 20 steps executed. Generated Auth Service (9 steps: project structure, core modules, DB layer with raw SQL queries, domain models, business logic, API routes, middleware, migrations, PBT tests) and Store Service (9 steps: same structure with session management, order client with retry, PBT tests) plus Docker Compose with MySQL initialization script.
+**Context**: Code Generation Part 2 complete. All checkboxes marked. Presenting for approval.
+
+---
+
+## CONSTRUCTION - Code Generation: Auth+Store (Approval)
+**Timestamp**: 2026-05-06T00:30:00Z
+**User Input**: "승인"
+**AI Response**: Code Generation for Auth+Store approved. Developer A's units (Unit 1 + Unit 2) are complete through the per-unit loop. Next: Developer B's units (Unit 3: Menu + Unit 4: Order) need to go through the same per-unit loop (Functional Design → NFR Requirements → NFR Design → Infrastructure Design → Code Generation). However, since this is a parallel development setup and the current user is Developer A, the next logical step is Build and Test for Developer A's completed units, or proceeding to Developer B/C's units.
+**Context**: Auth+Store code generation complete. Per-unit loop for Developer A finished. Discussing next steps with user.
+
+---
+
+## CONSTRUCTION - Session Paused
+**Timestamp**: 2026-05-06T00:31:00Z
+**User Input**: "D"
+**AI Response**: Session paused. Developer A's units complete. State saved for resumption.
+**Context**: User chose to pause. Next resumption options: Developer B (Menu+Order), Developer C (Frontend), or Build & Test.
+
+---

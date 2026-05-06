@@ -17,7 +17,7 @@ B) Access Token (짧은 만료, 예: 1시간) + Refresh Token (16시간 만료)
 C) Access Token (16시간) + 토큰 갱신 없이 만료 시 재로그인
 X) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: A
 
 ### Question 2
 로그인 시도 제한 정책은 어떻게 하시겠습니까?
@@ -28,7 +28,7 @@ C) 점진적 지연 (1회 실패: 즉시, 3회: 30초 대기, 5회: 5분 잠금)
 D) 10회 실패 시 계정 잠금 (관리자 해제 필요)
 X) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: A
 
 ### Question 3
 테이블 세션의 시작 시점은 언제로 정의하시겠습니까?
@@ -38,7 +38,7 @@ B) 해당 테이블에서 첫 번째 주문이 생성되는 시점
 C) 관리자가 명시적으로 "새 세션 시작" 버튼을 누르는 시점
 X) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: A
 
 ### Question 4
 테이블 세션 종료(이용 완료) 시 태블릿 동작은 어떻게 되나요?
@@ -48,7 +48,7 @@ B) 태블릿에 "이용 완료" 화면 표시 후 일정 시간 뒤 메뉴 화�
 C) 태블릿 자동 로그아웃 (관리자가 다시 설정해야 함)
 X) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: A
 
 ### Question 5
 매장(Store) 초기 데이터 생성은 어떻게 하시겠습니까?
@@ -58,34 +58,34 @@ B) DB 시드 스크립트로 초기 매장 데이터 삽입
 C) 첫 관리자 로그인 시 매장 자동 생성 (셀프 서비스 등록)
 X) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: A
 
 ---
 
 ## 실행 단계
 
-- [ ] Step 1: Auth Service 도메인 엔티티 설계
-  - [ ] Admin 엔티티 (관리자 계정)
-  - [ ] TableCredential 엔티티 (테이블 인증 정보)
-  - [ ] LoginAttempt 엔티티 (로그인 시도 기록)
-  - [ ] Token 구조 (JWT payload)
+- [x] Step 1: Auth Service 도메인 엔티티 설계
+  - [x] Admin 엔티티 (관리자 계정)
+  - [x] TableCredential 엔티티 (테이블 인증 정보)
+  - [x] LoginAttempt 엔티티 (로그인 시도 기록)
+  - [x] Token 구조 (JWT payload)
 
-- [ ] Step 2: Auth Service 비즈니스 규칙 정의
-  - [ ] 관리자 인증 규칙
-  - [ ] 테이블 인증 규칙
-  - [ ] 토큰 발급/검증 규칙
-  - [ ] 로그인 시도 제한 규칙
+- [x] Step 2: Auth Service 비즈니스 규칙 정의
+  - [x] 관리자 인증 규칙
+  - [x] 테이블 인증 규칙
+  - [x] 토큰 발급/검증 규칙
+  - [x] 로그인 시도 제한 규칙
 
-- [ ] Step 3: Store Service 도메인 엔티티 설계
-  - [ ] Store 엔티티 (매장)
-  - [ ] Table 엔티티 (테이블)
-  - [ ] TableSession 엔티티 (테이블 세션)
+- [x] Step 3: Store Service 도메인 엔티티 설계
+  - [x] Store 엔티티 (매장)
+  - [x] Table 엔티티 (테이블)
+  - [x] TableSession 엔티티 (테이블 세션)
 
-- [ ] Step 4: Store Service 비즈니스 규칙 정의
-  - [ ] 테이블 관리 규칙
-  - [ ] 세션 라이프사이클 규칙
-  - [ ] 이용 완료 처리 규칙
+- [x] Step 4: Store Service 비즈니스 규칙 정의
+  - [x] 테이블 관리 규칙
+  - [x] 세션 라이프사이클 규칙
+  - [x] 이용 완료 처리 규칙
 
-- [ ] Step 5: 비즈니스 로직 모델 통합
-  - [ ] Auth ↔ Store 연동 로직
-  - [ ] 에러 시나리오 정의
+- [x] Step 5: 비즈니스 로직 모델 통합
+  - [x] Auth ↔ Store 연동 로직
+  - [x] 에러 시나리오 정의
