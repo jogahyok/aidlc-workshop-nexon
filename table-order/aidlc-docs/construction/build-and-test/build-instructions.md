@@ -1,67 +1,94 @@
-# Build Instructions — Frontend (Unit 5)
+# Build Instructions — 테이블오더 서비스
 
 ## Prerequisites
-- **Node.js**: >= 20.0.0
-- **pnpm**: >= 8.0.0 (`npm install -g pnpm`)
-- **OS**: macOS / Linux / Windows
+
+| 도구 | 버전 | 용도 |
+|------|------|------|
+| Python | 3.11+ | 백엔드 서비스 |
+| Node.js | 20+ | 프론트엔드 |
+| pnpm | 8+ | 프론트엔드 패키지 관리 |
+| Docker | 24+ | 컨테이너 빌드/실행 |
+| Docker Compose | 2.20+ | 멀티 서비스 오케스트레이션 |
+| dbmate | latest | DB 마이그레이션 |
+
+## 환경 변수 설정
+
+각 서비스의 `.env.example`을 `.env`로 복사하고 값을 설정:
+```bash
+cp services/auth-service/.env.example services/auth-service/.env
+cp services/store-service/.env.example services/store-service/.env
+# menu-service, order-service도 동일
+```
+
+---
 
 ## Build Steps
 
-### 1. Install Dependencies
+### 1. 백엔드 의존성 설치
 ```bash
-cd table-order/frontend
+# 각 서비스별 가상환경 생성 및 의존성 설치
+cd services/auth-service
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+cd ../store-service
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+cd ../menu-service
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+cd ../order-service
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### 2. 프론트엔드 의존성 설치
+```bash
+cd frontend
 pnpm install
 ```
 
-### 2. Configure Environment
+### 3. Docker 이미지 빌드
 ```bash
-# Customer App (.env)
-cp packages/customer-app/.env.example packages/customer-app/.env
-# VITE_API_URL=http://localhost:8000/api
-# VITE_APP_ENV=development
-
-# Admin App (.env)
-cp packages/admin-app/.env.example packages/admin-app/.env
-# VITE_API_URL=http://localhost:8000/api
-# VITE_APP_ENV=development
+# 프로젝트 루트에서
+docker compose build
 ```
 
-### 3. Build All Packages
+### 4. 데이터베이스 시작 및 마이그레이션
 ```bash
-# 전체 빌드
+# MySQL 시작
+docker compose up mysql -d
+
+# 마이그레이션 실행 (dbmate)
+dbmate -u "mysql://root:rootpassword@localhost:3306/auth_db" up --migrations-dir services/auth-service/migrations
+dbmate -u "mysql://root:rootpassword@localhost:3306/store_db" up --migrations-dir services/store-service/migrations
+dbmate -u "mysql://root:rootpassword@localhost:3306/menu_db" up --migrations-dir services/menu-service/migrations
+dbmate -u "mysql://root:rootpassword@localhost:3306/order_db" up --migrations-dir services/order-service/migrations
+```
+
+### 5. 전체 서비스 시작
+```bash
+docker compose up -d
+```
+
+### 6. 프론트엔드 빌드
+```bash
+cd frontend
 pnpm build
-
-# 개별 빌드
-pnpm build:customer
-pnpm build:admin
 ```
 
-### 4. Verify Build Success
-- **Expected Output**: `✓ built in Xs` (각 앱별)
-- **Build Artifacts**:
-  - `packages/customer-app/dist/` — Customer App 정적 파일
-  - `packages/admin-app/dist/` — Admin App 정적 파일
-- **번들 크기 확인**: 각 앱 초기 로드 500KB 이하 (gzip)
+## 빌드 검증
 
-### 5. Development Server
-```bash
-# Customer App (http://localhost:5173)
-pnpm dev:customer
-
-# Admin App (http://localhost:5174)
-pnpm dev:admin
-```
-
-## Troubleshooting
-
-### pnpm install 실패
-- **원인**: Node.js 버전 불일치
-- **해결**: `node --version` 확인 → 20+ 필요
-
-### TypeScript 컴파일 에러
-- **원인**: shared 패키지 참조 문제
-- **해결**: `pnpm install` 재실행 → workspace 링크 확인
-
-### Vite 프록시 연결 실패
-- **원인**: 백엔드 서버 미실행
-- **해결**: 백엔드 API 서버 실행 확인 (http://localhost:8000)
+| 확인 항목 | 명령어 | 기대 결과 |
+|-----------|--------|-----------|
+| Auth Service | `curl http://localhost:8001/health` | `{"status": "healthy"}` |
+| Store Service | `curl http://localhost:8002/health` | `{"status": "healthy"}` |
+| Menu Service | `curl http://localhost:8003/health` | `{"status": "healthy"}` |
+| Order Service | `curl http://localhost:8004/health` | `{"status": "healthy"}` |
+| Frontend build | `ls frontend/packages/customer-app/dist` | 빌드 파일 존재 |
