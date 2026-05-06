@@ -157,6 +157,50 @@
 
 ---
 
+## CONSTRUCTION - Functional Design: Frontend (Developer C Session Start)
+**Timestamp**: 2026-05-06T00:19:00Z
+**User Input**: "내가 개발자 C를 맡았고 이거는 깃을 공용으로 사용을 하는거야 여기서 깃을 올리고 하면 될거야 작업을 시작하자"
+**AI Response**: Developer C session started. Proceeding with Functional Design for Unit 5 (Frontend). Creating functional design plan with questions.
+**Context**: CONSTRUCTION PHASE - Per-unit loop for Developer C's unit (Frontend). Parallel development with Developer A (Auth+Store) and Developer B (Menu+Order).
+
+---
+
+
+## CONSTRUCTION - Functional Design: Frontend (Answers Received)
+**Timestamp**: 2026-05-06T00:20:00Z
+**User Input**: "내가 프론트엔드는 만들어 보진 않아서 일단 작성은 했는데 추천하는걸로 해줄수 있니" → "ssr spa가 뭐야 일단 너가 추천 하는걸로 바꿔 줘" → "응 진행해줘"
+**AI Response**: Read answers, provided recommendations. Updated Q4: D→A, Q5: C→A, Q8: B→C. Explained SSR vs SPA and SSE concepts. User approved final answers: Q1:B(MUI), Q2:B(React Router), Q3:C(localStorage+만료), Q4:A(테이블 그리드 카드), Q5:A(Vite+pnpm), Q6:B(TanStack Query), Q7:A(React Hook Form+Zod), Q8:C(선택적 폴링). No contradictions detected. Proceeding to generate functional design artifacts.
+**Context**: Functional Design Step 5 complete. All answers validated. Proceeding to Step 6 - Generate Functional Design Artifacts.
+
+---
+
+
+## CONSTRUCTION - Functional Design: Frontend (Approval)
+**Timestamp**: 2026-05-06T00:21:00Z
+**User Input**: "굿 좋아 계속 가볼까 ?"
+**AI Response**: Functional Design approved. Proceeding to NFR Requirements stage for Frontend unit.
+**Context**: Functional Design for Unit 5 (Frontend) complete and approved. Moving to NFR Requirements.
+
+---
+
+
+## CONSTRUCTION - NFR Requirements: Frontend (Answers Received)
+**Timestamp**: 2026-05-06T00:22:00Z
+**User Input**: "바로 고고 일단 작성했어"
+**AI Response**: Read answers: Q1:B(보통 500KB), Q2:B(중간 60%), Q3:B(모던 브라우저), Q4:B(콘솔+서버 전송). No contradictions. Proceeding to generate NFR artifacts.
+**Context**: NFR Requirements Step 5 complete. All answers validated. Proceeding to Step 6 - Generate NFR Artifacts.
+
+---
+
+
+## CONSTRUCTION - NFR Requirements: Frontend (Approval)
+**Timestamp**: 2026-05-06T00:23:00Z
+**User Input**: "작업 다 됫니? 바로 진행 해줄래"
+**AI Response**: NFR Requirements approved. Proceeding to NFR Design stage for Frontend unit.
+**Context**: NFR Requirements for Unit 5 (Frontend) complete and approved. Moving to NFR Design.
+
+---
+
 ## CONSTRUCTION - Functional Design: Auth+Store (Answers & Generation)
 **Timestamp**: 2026-05-06T00:19:00Z
 **User Input**: "응 나는 개발자 A 롤이 맞아.auth-store-functional-design-plan.md파일 업데이트했어. 확인해줘"
