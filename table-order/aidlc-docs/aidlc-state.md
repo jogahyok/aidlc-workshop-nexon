@@ -3,7 +3,7 @@
 ## Project Information
 - **Project Type**: Greenfield
 - **Start Date**: 2026-05-06T00:00:00Z
-- **Current Stage**: CONSTRUCTION - Functional Design (Unit 1+2: Auth+Store)
+- **Current Stage**: CONSTRUCTION - Functional Design (Unit 5: Frontend - Complete, awaiting approval)
 
 ## Workspace State
 - **Existing Code**: No
@@ -29,4 +29,5 @@
 - [x] INCEPTION - Application Design (Approved)
 - [x] INCEPTION - Units Generation (Approved)
 - [ ] CONSTRUCTION - Per-Unit Design & Code Generation
+  - [ ] Unit 5 (Frontend - Developer C): Functional Design ✅ (awaiting approval)
 - [ ] CONSTRUCTION - Build and Test
