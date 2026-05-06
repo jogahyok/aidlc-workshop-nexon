@@ -30,7 +30,7 @@ export default function MenuDetailPage() {
     enabled: !!menuId,
   });
 
-  const menuItem = menus.find((m) => m.id === menuId);
+  const menuItem = menus.find((m) => String(m.id) === menuId);
 
   const allSelectedOptions = useMemo(() => {
     return Array.from(selectedOptions.values()).flat();
@@ -132,7 +132,7 @@ export default function MenuDetailPage() {
       ))}
 
       {/* 수량 + 담기 버튼 */}
-      <Box sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, p: 2, bgcolor: 'background.paper', borderTop: 1, borderColor: 'divider' }}>
+      <Box sx={{ position: 'fixed', bottom: 56, left: 0, right: 0, p: 2, bgcolor: 'background.paper', borderTop: 1, borderColor: 'divider', zIndex: 1100 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1 }}>
           <QuantityControl value={quantity} onChange={setQuantity} />
           <PriceDisplay amount={totalPrice} variant="h6" />
