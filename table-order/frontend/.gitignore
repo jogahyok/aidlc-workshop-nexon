@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 
+# But DO NOT ignore packages/ source code (override root .gitignore)
+!packages/
+
 # Build output
 dist/
 build/
