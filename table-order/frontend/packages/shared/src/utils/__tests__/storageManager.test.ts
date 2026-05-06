@@ -31,7 +31,6 @@ describe('StorageManager', () => {
 
     it('returns null after expiration', () => {
       StorageManager.set('ttl-key', 'value', 1); // 1ms TTL
-      vi.advanceTimersByTime(10);
 
       // 수동으로 만료 시뮬레이션
       const raw = localStorage.getItem('ttl-key');
