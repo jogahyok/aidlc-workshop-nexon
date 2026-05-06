@@ -29,5 +29,5 @@
 - [x] INCEPTION - Application Design (Approved)
 - [x] INCEPTION - Units Generation (Approved)
 - [ ] CONSTRUCTION - Per-Unit Design & Code Generation
-  - [ ] Unit 5 (Frontend - Developer C): Functional Design ✅ (awaiting approval)
+  - [ ] Unit 5 (Frontend - Developer C): Functional Design ✅ → NFR Requirements ✅ → NFR Design (in progress)
 - [ ] CONSTRUCTION - Build and Test
